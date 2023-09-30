@@ -1,5 +1,13 @@
 @use "../abstracts" as *;
 
+.mx-auto {
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: $section-padding;
+}
+
 @each $size-name, $size-value in $sizes {
   .margin {
     &-#{$size-name} {
@@ -30,7 +38,7 @@
       margin-inline: $size-value;
     }
   }
-  
+
   .padding {
     &-#{$size-name} {
       padding: $size-value;
