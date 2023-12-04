@@ -3,31 +3,35 @@
 .button {
   cursor: pointer;
   display: inline-flex;
-  border: 0;
-  padding: 1.125em 2em;
-  font-weight: $fw-700;
+  justify-content: center;
+  border: $button-border;
+  border-radius: $button-border-radius;
+  padding: $button-padding;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
   line-height: 1;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: $button-text-transform;
   transition: background-color 275ms ease, color 275ms ease;
 
+  &[data-type="accent"] {
+    background-color: $button-accent-background;
+    color: $button-accent-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-accent-background-hover;
+      color: $button-accent-color-hover;
+    }
+  }
 
   &[data-type="primary"] {
-    background-color: clr(primary, 400);
-    color: clr(neutral, 900);
-  }
+    background-color: $button-primary-background;
+    color: $button-primary-color;
 
-  &[data-type="outline"] {
-    --outline-size: 5px;
-
-    outline: var(--outline-size) solid clr(neutral, 100);
-    outline-offset: calc(var(--outline-size) * -1);
-    background: transparent;
-    color: clr(neutral, 100);
-  }
-
-  &:is(:hover, :focus) {
-    background-color: clr(neutral, 100);
-    color: clr(neutral, 900);
+    &:is(:hover, :focus) {
+      background-color: $button-primary-background-hover;
+      color: $button-primary-color-hover;
+    }
   }
 }
