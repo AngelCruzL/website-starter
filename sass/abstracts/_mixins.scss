@@ -2,6 +2,7 @@
 @use "sass:math";
 @use "sass:map";
 @use "breakpoints" as *;
+@use "tokens" as *;
 
 @mixin mq($size) {
   @if map.has-key($breakpoints, $size) {
@@ -23,12 +24,11 @@
 }
 
 @mixin heading($fs, $color: $heading-color-default) {
-  font-size: $fs;
   color: $color;
-
   font-family: $heading-font-family;
+  font-size: $fs;
+  font-weight: $heading-font-weight;
   text-transform: $heading-text-transform;
   letter-spacing: $heading-letter-spacing;
-  font-weight: $heading-font-weight;
   line-height: $heading-line-height;
 }
