@@ -5,7 +5,7 @@
 }
 
 .section {
-  padding-block: $section-padding;
+  padding-block: $section-padding-block;
 }
 
 @each $size-name, $size-value in $sizes {
